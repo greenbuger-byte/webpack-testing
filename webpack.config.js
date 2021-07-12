@@ -17,7 +17,8 @@ const commons = merge({
     mode: 'development',
     entry: {
         'index': PATHS.sourse + '/pages/index/index.js',
-        'blog': PATHS.sourse + '/pages/blog/blog.js'
+        'blog': PATHS.sourse + '/pages/blog/blog.js',
+        'style': PATHS.sourse + '/style/common.scss'
     },
     output: {
         path: PATHS.build,
