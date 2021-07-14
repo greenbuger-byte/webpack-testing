@@ -17,24 +17,26 @@ const commons = merge({
     mode: 'development',
     entry: {
         'index': PATHS.sourse + '/pages/index/index.js',
-        'blog': PATHS.sourse + '/pages/blog/blog.js',
-        'style': PATHS.sourse + '/style/common.scss'
+      //  'blog': PATHS.sourse + '/pages/blog/blog.js',
     },
     output: {
         path: PATHS.build,
-        filename: 'dist/js/[name].js'
+        filename: 'dist/[name].js'
+    },
+    module: {
+        rules: [
+             {
+                test: /\.(woff|woff2|ttf|eot)$/,
+                use: 'file-loader?name=fonts/[name].[ext]'
+            }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
             chunks: ['index', 'common'],
             template: PATHS.sourse + '/pages/index/index.pug'
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'blog.html',
-            chunks: ['blog', 'common'],
-            template: PATHS.sourse + '/pages/blog/blog.pug'
-        }),
+        })
         
     ]}, 
     pugConfig(),

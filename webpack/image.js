@@ -8,7 +8,7 @@ module.exports = () =>({
               {
                 loader: 'file-loader',
                 options: {
-                    name: "imgs/[name].[ext]"
+                    name: "dist/[name]/[name].[ext]"
               },
               },
             ],
