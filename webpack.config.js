@@ -30,6 +30,7 @@ const commons = merge({
                 use: 'file-loader?name=fonts/[name].[ext]'
             }
         ]
+
     },
     plugins: [
         new HtmlWebpackPlugin({
